@@ -19,7 +19,7 @@ public class Stats {
         this.Hp = 100;
         this.Exp = 0;
         this.maxExp = 100;
-        this.Money = 1000000;
+        this.Money = 0;
         this.Points = 0;
         this.baseATK = 10;
         this.baseHp = 100;
