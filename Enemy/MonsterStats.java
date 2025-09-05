@@ -43,7 +43,7 @@ public class MonsterStats {
             }else if(ATKSpeed < 0.5){
                 ATKSpeed = 0.5;
             }else{
-                ATKSpeed = Math.max(0.5, ATK+0.05);
+                ATKSpeed = Math.max(0.5, ATKSpeed+0.05);
             }
             safeLevel = Math.max(1, Level);
             this.Level = Level - 1;
