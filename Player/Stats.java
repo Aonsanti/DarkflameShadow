@@ -14,9 +14,9 @@ public class Stats {
 
     public Stats() {
         this.Level = 1;
-        this.ATK = 1000000;
+        this.ATK = 10;
         this.ATKSpeed = 2.5;
-        this.Hp = 1000000;
+        this.Hp = 100;
         this.Exp = 0;
         this.maxExp = 100;
         this.Money = 0;

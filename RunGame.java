@@ -5,7 +5,7 @@ import Player.Equipment;
 import Enemy.MonsterStats;
 import Enemy.BossStats;
 
-public class RunGame {
+public class RunGame{
     public static void main(String[] args) {
         Stats stats = new Stats();
         Level level = new Level(stats);
