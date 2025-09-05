@@ -126,6 +126,7 @@ public class FightMonster extends JFrame {
 
         Player_Health = stats.getHp();
         PlayerCurrent_Health = Player_Health;
+
         Monster_Health = monsterStats.getHp();
         MonsterCurrent_Health = Monster_Health;
 
@@ -177,6 +178,18 @@ public class FightMonster extends JFrame {
             TellSpeed.setText("Speed : " + speedMultiplier);
         });
         add(speed2x);
+
+        JButton speed4x = new JButton("4x");
+        speed4x.setBounds(150, 10, 60, 40);
+        speed4x.setFont(new Font("Comic Sans MS", Font.BOLD, 14));
+        speed4x.setFocusPainted(false);
+        speed4x.setBackground(Color.black);
+        speed4x.setForeground(Color.white);
+        speed4x.addActionListener(e -> {
+            speedMultiplier = 4.0;
+            TellSpeed.setText("Speed : " + speedMultiplier);
+        });
+        add(speed4x);
         
     }
 
