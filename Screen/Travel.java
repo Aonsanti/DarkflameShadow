@@ -17,7 +17,7 @@ public class Travel extends JFrame{
     private Bunker bunker;
     private JLabel Travel , MonsterATK , MonsterATKSpeed , MonsterHp , Monster_Level , Boss_Level , Money , BossATK , BossATKSpeed , BossHp;
     private JButton Monster , Boss;
-    public Travel(Stats stats, Level level, Equipment equipment, MonsterStats monsterStats, BossStats bossStats , Bunker bunker) {
+    public Travel(Stats stats, Level level, Equipment equipment, MonsterStats monsterStats, BossStats bossStats) {
             this.stats = stats;
             this.level = level;
             this.equipment = equipment;

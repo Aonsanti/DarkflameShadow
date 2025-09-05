@@ -147,7 +147,7 @@ public class Bunker extends JFrame {
         travel.setFocusPainted(false);
         travel.setBackground(Color.white);
         travel.addActionListener((ActionEvent e) -> {
-            SwingUtilities.invokeLater(() -> new Travel(stats, level, equipment, monsterStats, bossStats , this));
+            SwingUtilities.invokeLater(() -> new Travel(stats, level, equipment, monsterStats, bossStats));
         });
         add(travel);
 
@@ -205,7 +205,6 @@ public class Bunker extends JFrame {
         bootsLabel.setText("<html>Boots<br>1/" + equipment.getBoots_Chance() + "<br>+" + equipment.getBoots() + " HP</html>");
         revalidate();
         repaint();
-        System.out.println("Bunker updateUI called: ATK=" + stats.getATK() + ", HP=" + stats.getHp());
     }
 
     void setDisplay() {
