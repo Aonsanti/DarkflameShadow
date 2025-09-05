@@ -1,6 +1,6 @@
 package Enemy;
 
-public class BossStats {
+public class MonsterStats {
     private int Level;
     private int ATK;
     private double ATKSpeed;
@@ -8,43 +8,38 @@ public class BossStats {
     private int Money;
     private int Exp;
     private int safeLevel;
-    public BossStats(){
+    
+    public MonsterStats(){
         this.Level = 1;
-        this.ATK = 100;
-        this.ATKSpeed = 2.0;
-        this.Hp = 1000;
-        this.Money = 1000;
-        this.Exp = 500;
+        this.ATK = 10;
+        this.ATKSpeed = 3.0;
+        this.Hp = 100;
+        this.Money = 100;
+        this.Exp = 200;
         this.safeLevel = 1;
     }
-
-    public void BossIncreaseStats(){
+    public void MonsterIncreaseStats(){
         if(Level <= 1){
-            Level = 1;
-        }else{
-            this.Level = Level + 1;
-            ATK = Math.max(100, ATK * Level); 
-            ATKSpeed = Math.max(2.0, 2.0 + (safeLevel - 1) / safeLevel);
-            if (ATKSpeed < 0.2){ATKSpeed = 0.2;}
-            Hp = Math.max(1000, 1000 * Level);
-            Money = Level * 1000;
-            Exp = Exp * Level;
+            
         }
+        this.Level = Level + 1;
+        ATK = Math.max(10, ATK * Level); 
+        ATKSpeed = Math.max(3.0, 3.0 + (safeLevel - 1) / safeLevel);
+        if (ATKSpeed < 0.5){ATKSpeed = 0.5;}
+        Hp = Math.max(100, 100 * Level);
+        Money = Level * 100;
+        Exp = Exp * Level;
     }
-    public void BossDecreaseStats(){
-        if(Level <= 1){
-            Level = 1;
-        }else{
-            safeLevel = Math.max(1, Level);
-            this.Level = Level - 1;
-            ATK = Math.max(100, ATK / (safeLevel * 2));
-            ATKSpeed = Math.max(2.0, 2.0 + (safeLevel - 1) / safeLevel);
-            if (ATKSpeed > 2.0){ATKSpeed = 2.0;}
-            if (ATKSpeed < 0.2){ATKSpeed = 0.2;}
-            Hp = Math.max(1000, 1000 / safeLevel);
-            Money = Math.max(1000, Money - 1000);
-            Exp = Math.max(500, Exp / safeLevel);
-        }
+    public void MonsterDecreaseStats(){
+        safeLevel = Math.max(1, Level);
+        this.Level = Level - 1;
+        ATK = Math.max(10, ATK / (safeLevel * 2));
+        ATKSpeed = Math.max(3.0, 3.0 + (safeLevel - 1) / safeLevel);
+        if (ATKSpeed > 3.0){ATKSpeed = 3.0;}
+        if (ATKSpeed < 0.5){ATKSpeed = 0.5;}
+        Hp = Math.max(100, 100 / safeLevel);
+        Money = Math.max(100, Money - 100);
+        Exp = Math.max(50, Exp / safeLevel);
     }   
 
     public void setLevel(int level){
@@ -96,7 +91,7 @@ public class BossStats {
     public int getMoney(){
         return Money;
     }
-    
+
     public void setExp(int Exp){
         if (Exp >= 0) {
             this.Exp = Exp;

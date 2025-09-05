@@ -19,8 +19,8 @@ public class BossStats {
     }
 
     public void BossIncreaseStats(){
-        if(Level <= 1){
-            Level = 1;
+        if(Level <= 0){
+            Level = 0;
         }else{
             this.Level = Level + 1;
             ATK = Math.max(100, ATK * Level); 
@@ -32,8 +32,8 @@ public class BossStats {
         }
     }
     public void BossDecreaseStats(){
-        if(Level <= 1){
-            Level = 1;
+        if(Level <= 0){
+            Level = 0;
         }else{
             safeLevel = Math.max(1, Level);
             this.Level = Level - 1;
