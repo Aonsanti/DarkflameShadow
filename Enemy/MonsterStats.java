@@ -19,28 +19,35 @@ public class MonsterStats {
         this.safeLevel = 1;
     }
     public void MonsterIncreaseStats(){
-        if(Level <= 1){
+        if(Level < 1){
             Level = 1;
         }else{
+            if(ATKSpeed <= 0.5){
+                ATKSpeed = 0.5;
+            }else{
+                ATKSpeed = Math.max(0.5, ATKSpeed-0.05);
+            }
             this.Level = Level + 1;
-            ATK = Math.max(10, ATK * Level); 
-            ATKSpeed = Math.max(3.0, 3.0 + (safeLevel - 1) / safeLevel);
-            if (ATKSpeed < 0.5){ATKSpeed = 0.5;}
+            ATK = Math.max(10, ATK * 2); 
             Hp = Math.max(100, 100 * Level);
-            Money = Level * 100;
-            Exp = Exp * Level;
+            Money = Money * 2;
+            Exp = Level * 2;
         }
     }
     public void MonsterDecreaseStats(){
         if(Level <= 1){
             Level = 1;
         }else{
+            if(ATKSpeed > 3.0){
+                ATKSpeed = 3.0;
+            }else if(ATKSpeed < 0.5){
+                ATKSpeed = 0.5;
+            }else{
+                ATKSpeed = Math.max(0.5, ATK+0.05);
+            }
             safeLevel = Math.max(1, Level);
             this.Level = Level - 1;
             ATK = Math.max(10, ATK / (safeLevel * 2));
-            ATKSpeed = Math.max(3.0, 3.0 + (safeLevel - 1) / safeLevel);
-            if (ATKSpeed > 3.0){ATKSpeed = 3.0;}
-            if (ATKSpeed < 0.5){ATKSpeed = 0.5;}
             Hp = Math.max(100, 100 / safeLevel);
             Money = Math.max(100, Money - 100);
             Exp = Math.max(50, Exp / safeLevel);

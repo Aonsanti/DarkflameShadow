@@ -19,28 +19,34 @@ public class BossStats {
     }
 
     public void BossIncreaseStats(){
-        if(Level <= 1){
+        if(Level < 1){
             Level = 1;
         }else{
             this.Level = Level + 1;
-            ATK = Math.max(100, ATK * Level); 
-            ATKSpeed = Math.max(2.0, 2.0 + (safeLevel - 1) / safeLevel);
-            if (ATKSpeed < 0.2){ATKSpeed = 0.2;}
-            Hp = Math.max(1000, 1000 * Level);
+            ATK = Math.max(100, ATK * 2); 
+            if(ATKSpeed < 0.2){
+                ATKSpeed = 0.2;
+            }else{
+                ATKSpeed = Math.max(0.2, ATKSpeed - 0.1);
+            }
+            Hp = Math.max(1000, 1000 * 2);
             Money = Level * 1000;
-            Exp = Exp * Level;
+            Exp = Exp * 2;
         }
     }
     public void BossDecreaseStats(){
         if(Level <= 1){
             Level = 1;
         }else{
+            if(ATKSpeed > 2.0){
+                ATKSpeed = 2.0;
+            }else if(ATKSpeed < 0.2){
+                ATKSpeed = 0.2;
+            }else{
+                ATKSpeed = Math.max(0.2, ATKSpeed+0.1);
+            }
             safeLevel = Math.max(1, Level);
             this.Level = Level - 1;
-            ATK = Math.max(100, ATK / (safeLevel * 2));
-            ATKSpeed = Math.max(2.0, 2.0 + (safeLevel - 1) / safeLevel);
-            if (ATKSpeed > 2.0){ATKSpeed = 2.0;}
-            if (ATKSpeed < 0.2){ATKSpeed = 0.2;}
             Hp = Math.max(1000, 1000 / safeLevel);
             Money = Math.max(1000, Money - 1000);
             Exp = Math.max(500, Exp / safeLevel);

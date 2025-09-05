@@ -135,13 +135,13 @@ public class FightMonster extends JFrame {
 
     void setText(){
         PlayerHp = new JLabel("Hp : " + PlayerCurrent_Health);
-        PlayerHp.setBounds(150, 50, 300, 300);
+        PlayerHp.setBounds(150, 50, 1000, 300);
         PlayerHp.setFont(new Font("Comic Sans MS", Font.BOLD, 48));
         PlayerHp.setForeground(setHealthPlayerColor(PlayerCurrent_Health, Player_Health));
         add(PlayerHp);
 
         MonsterHp = new JLabel("Monster HP : " + MonsterCurrent_Health);
-        MonsterHp.setBounds(875, 200, 300, 50);
+        MonsterHp.setBounds(875, 200, 1000, 50);
         MonsterHp.setFont(new Font("Comic Sans MS", Font.BOLD, 32));
         MonsterHp.setForeground(setHealthPlayerColor(MonsterCurrent_Health, Monster_Health));
         add(MonsterHp);

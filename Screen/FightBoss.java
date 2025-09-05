@@ -135,13 +135,13 @@ public class FightBoss extends JFrame {
 
     void setText(){
         PlayerHp = new JLabel("Hp : " + PlayerCurrent_Health);
-        PlayerHp.setBounds(150, 50, 300, 300);
+        PlayerHp.setBounds(150, 50, 1000, 300);
         PlayerHp.setFont(new Font("Comic Sans MS", Font.BOLD, 48));
         PlayerHp.setForeground(setHealthPlayerColor(PlayerCurrent_Health, Player_Health));
         add(PlayerHp);
 
         BossHp = new JLabel("Monster HP : " + BossCurrent_Health);
-        BossHp.setBounds(875, 200, 300, 50);
+        BossHp.setBounds(875, 200, 1000, 50);
         BossHp.setFont(new Font("Comic Sans MS", Font.BOLD, 32));
         BossHp.setForeground(setHealthPlayerColor(BossCurrent_Health, Boss_Health));
         add(BossHp);

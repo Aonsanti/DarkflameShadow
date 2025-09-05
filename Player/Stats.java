@@ -14,12 +14,12 @@ public class Stats {
 
     public Stats() {
         this.Level = 1;
-        this.ATK = 10;
+        this.ATK = 1000000;
         this.ATKSpeed = 2.5;
-        this.Hp = 100;
+        this.Hp = 1000000;
         this.Exp = 0;
         this.maxExp = 100;
-        this.Money = 1000000;
+        this.Money = 0;
         this.Points = 0;
         this.baseATK = 10;
         this.baseHp = 100;
