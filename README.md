@@ -1,6 +1,6 @@
-# Darkflame Shadow
+# DarkflameShadow
 
-A simple RPG game made with Java. Fight monsters, get stronger, and collect cool gear!
+A simple RPG game made with Java base on OOP concept. Fight monsters, get stronger, and collect cool gear!
 
 ## What is this game?
 
@@ -51,8 +51,4 @@ DarkflameShadow/
 └── Image/             # Pictures
 ```
 
-## About
-
-Made by Aonsanti as a learning project.
-
-License: MIT (free to use)
+License: MIT
